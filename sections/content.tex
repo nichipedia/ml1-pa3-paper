@@ -5,26 +5,26 @@
 \textbf{Machine Learning 1 Spring 19} |
 \textbf{Programming Assignment 3} 
 
-\section{Voice Features for detecting Parkinsons Disease}
-    Detecting Parkinsons Disease can be difficult. 
+\section{Voice Features for detecting Parkinson's Disease}
+    Detecting Parkinson's Disease can be difficult. 
     It takes time and many visits to correctly identify the early stages of motor function impairments.
-    Detecting Parkinsons early can drastically help with its treatment.
-    One of the earliest indicators of Parkinsons is vocal impairment.
-    This means that detecting vocal impairments that are linked to Parkinsons could be a way to detect Parkinsons  earlier.
-    People with Parkinson's typically display a variety of vocal symptoms that include issues with vowel sounds and articulating speach \cite{little}.
-    Issues with producing vowels (\textit{dysphinia}) can include: volume control, bretiness, roughness, and exagerated vocal tremor \cite{little}.
-    These issues can be represented as features in a dataset, and then used to predict Parkinson's.
+    Detecting Parkinson's early can drastically help with its treatment.
+    One of the earliest indicators of Parkinson's is vocal impairment.
+    This means that detecting vocal impairments that are linked to Parkinson's could be a way to detect Parkinson's  earlier.
+    People with Parkinson's typically display a variety of vocal symptoms that include issues with vowel sounds and articulating speech \cite{little}.
+    Issues with producing vowels (\textit{dysphinia}) can include: volume control, breathiness, roughness, and exaggerated vocal tremor \cite{little}.
+    These issues can be represented as features in a data-set, and then used to predict Parkinson's.
 
 
 \section{Feature Extraction}
     The features were generated from human voice audio recordings \cite{little}.
     These recordings were created in a controlled setting with identical microphones across genders and age ranges.
     Along with varying progression stages of the disease. 
-    Several algorithms for extracting features were applied to this dataset.
+    Several algorithms for extracting features were applied to this data-set.
     The authors implemented a \textit{Fractal Scaling Analysis} model for detecting hoarseness with great effect \cite{McSharry}.
     As stated above, Dysphonia features are potential predictors. 
     The authors used \textit{Nonlinear Time Series Analysis} tools for extracting these features.
-    Tools such as correlation dimensions, recurrence period density entropy, and Detrended fluctuation analysis were used for this extraction.
+    Tools such as correlation dimensions, recurrence period density entropy, and detrended fluctuation analysis were used for this extraction.
 
 
 
@@ -63,3 +63,26 @@
         \hline
     \end{tabular}
 \end{center}
+
+
+\section{Code}
+I implemented the algorithms using Python with numpy.
+The implementations can be found the Classification.py file. 
+Each implementation extends sklearns BaseEstimator class. 
+This is so my implementations follow the sklearn api.
+This allows me to use the tools provided by the framework.
+I produce my results in the parkinsons-models.py file.
+For the 10 fold cross validation I use sklearns cross validation class.\\
+\textbf{Python Dependencies}
+\begin{itemize}
+    \item numpy
+    \item pandas
+    \item sklearn
+\end{itemize}
+\textbf{Instructions for running code}
+\begin{itemize}
+    \item pip install python dependencies
+    \item open a terminal and cd to the project directory
+    \item run the parkinsons-models.py class
+    \item the results will be printed to the console
+\end{itemize}
