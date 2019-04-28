@@ -1,0 +1,25 @@
+%hg \section{content}
+\setlength{\parindent}{10ex}
+
+\textbf{Nicholas Moran} |
+\textbf{Machine Learning 1 Spring 19} |
+\textbf{Programming Assignment 3} 
+
+\section{Voice Features for detecting Parkinsons Disease}
+    Detecting Parkinsons Disease can be difficult. 
+    It takes time and many visits to correctly identify the early stages of motor function issues.
+    Detecting Parkinsons early can drastically help with its treatment.
+    One of the earliest indicators of Parkinsons is vocal impairment.
+    This means that detecting vocal impairments that are linked to Parkinsons could be a way to detect Parkinsons extremely early.
+
+
+\section{Feature Extraction}
+    The features are extracted from the recorded audio via algorithms.
+
+
+
+
+\section{Model Preformance}
+
+
+
