@@ -2,17 +2,17 @@
 \setlength{\parindent}{10ex}
 
 \textbf{Nicholas Moran} |
-\textbf{Machine Learning 1 Spring 19} |
+\textbf{ML1 Spring 19} |
 \textbf{Programming Assignment 3} 
 
 \section{Voice Features for detecting Parkinson's Disease}
     Detecting Parkinson's Disease can be difficult. 
-    It takes time and many visits to correctly identify the early stages of motor function impairments.
+    It takes time and many visits with a healthcare professional to correctly identify the early stages of motor function impairments.
     Detecting Parkinson's early can drastically help with its treatment.
     One of the earliest indicators of Parkinson's is vocal impairment.
     This means that detecting vocal impairments that are linked to Parkinson's could be a way to detect Parkinson's  earlier.
     People with Parkinson's typically display a variety of vocal symptoms that include issues with vowel sounds and articulating speech \cite{little}.
-    Issues with producing vowels (\textit{dysphinia}) can include: volume control, breathiness, roughness, and exaggerated vocal tremor \cite{little}.
+    Issues with producing vowels (\textit{dysphonia}) can include: volume control, breathiness, roughness, and exaggerated vocal tremor \cite{little}.
     These issues can be represented as features in a data-set, and then used to predict Parkinson's.
 
 
@@ -24,10 +24,12 @@
     The authors implemented a \textit{Fractal Scaling Analysis} model for detecting hoarseness with great effect \cite{McSharry}.
     As stated above, Dysphonia features are potential predictors. 
     The authors used \textit{Nonlinear Time Series Analysis} tools for extracting these features.
-    Tools such as correlation dimensions, recurrence period density entropy, and detrended fluctuation analysis were used for this extraction.
-
-
-
+    Tools such as \textit{correlation dimensions}, \textit{recurrence period density entropy}, and \textit{detrended fluctuation analysis} were used for this extraction.
+    The authors also implemented their own algorithm they named \textit{pitch period entropy} \cite{little}.
+    This algorithm is specifically designed for detecting vocal impairments specific to Parkinson's disease.
+    The authors also used two other software programs for extracting features.
+    \textbf{Praat} was used as well as \textbf{Kay Pentax multidimensional voice program (MDVP)}.
+    MDVP was used to extract jitter features and shimmer features.
 
 
 \section{Model Performance}
@@ -35,7 +37,7 @@
 \begin{center}
     \begin{tabular}{|c|c|c|c|}
         \hline
-            \multicolumn{1}{|r|}{} & \multicolumn{3}{|c|}{Error} \\
+            \multicolumn{1}{|r|}{} & \multicolumn{3}{|c|}{Error Rate (\%)} \\
         \hline
         \textbf{Cross Validation} & \textbf{LR} & \textbf{LDA} & \textbf{QDA} \\
         \hline
@@ -72,14 +74,18 @@ Each implementation extends sklearns BaseEstimator class.
 This is so my implementations follow the sklearn api.
 This allows me to use the tools provided by the framework.
 I produce my results in the parkinsons-models.py file.
-For the 10 fold cross validation I use sklearns cross validation class.\\
+For the 10 fold cross validation I use sklearns cross validation class.
+\par
+\par
 \textbf{Python Dependencies}
 \begin{itemize}
     \item numpy
     \item pandas
     \item sklearn
 \end{itemize}
-\textbf{Instructions for running code}
+ \par
+ \par
+\textbf{Instructions for Running Code}
 \begin{itemize}
     \item pip install python dependencies
     \item open a terminal and cd to the project directory
